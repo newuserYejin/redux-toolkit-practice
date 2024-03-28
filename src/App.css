@@ -28,12 +28,18 @@
 .inputBox {
     position: absolute;
     display: flex;
-    padding: 1em 0;
+    padding: 0.2em;
     align-items: center;
     right: 1em;
+    justify-content: center;
+    width: 15%;
+    border: solid 3px #ea041f;
+    border-radius: 30px;
 }
 
 .inputBox input {
-    width: 150px;
-    margin-left: 10px;
+    border: none;
+    border-bottom: solid 2px black;
+    width: 60%;
+    margin-left: 5px;
 }
