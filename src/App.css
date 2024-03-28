@@ -1,7 +1,31 @@
 .loginButton {
     display: flex;
     justify-content: flex-end;
-    margin-right: 1em;
+    align-items: center;
+    padding-right: 1em;
+}
+
+.loginButton button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border: none;
+
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.loginButton button:hover {
+    background-color: #6c757d;
+    color: white;
+    cursor: pointer;
+}
+
+.loginButton div {
+    margin-left: 2px;
 }
 
 .navSection {
@@ -12,6 +36,7 @@
 .menuList {
     display: flex;
     list-style-type: none;
+    margin-top: 1em;
 }
 
 .menuList li {
@@ -42,4 +67,39 @@
     border-bottom: solid 2px black;
     width: 60%;
     margin-left: 5px;
+}
+
+.productCard {
+    margin-bottom: 1em;
+}
+
+.productCard img {
+    width: 100%;
+}
+
+.productCard:hover {
+    transform: scale(1.03);
+}
+
+.BoxContainer {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    width: 40%;
+    position: relative;
+}
+
+.loginForm button {
+    position: absolute;
+    right: 0;
+}
+
+.BoxContainer .row,
+.BoxContainer .row .col,
+.BoxContainer .row .col img {
+    height: 100%;
 }
