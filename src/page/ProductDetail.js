@@ -25,11 +25,13 @@ const ProductDetail = () => {
                 <Col>
                     <img src={product?.img} />
                 </Col>
-                <Col>
-                    <div>{product?.title}</div>
+                <Col className='productComment'>
+                    <div className='productTitle'>{product?.title}</div>
                     <div>&#8361;{product?.price}</div>
                     <div>{product?.choice === true ? "Conscious choice" : ""}</div>
                     <div>{product?.new === true ? "신제품" : ""}</div>
+
+                    <button className='addButton'>추가</button>
                 </Col>
             </Row>
         </Container>

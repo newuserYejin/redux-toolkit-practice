@@ -3,6 +3,7 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 1em;
+    margin-top: 10px;
 }
 
 .loginButton button {
@@ -102,4 +103,68 @@
 .BoxContainer .row .col,
 .BoxContainer .row .col img {
     height: 100%;
+}
+
+/*디테일페이지*/
+
+.productComment div {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.productComment div:nth-child(3) {
+    font-size: 0.8em;
+    font-weight: 400;
+    display: inline-block;
+    width: auto;
+    border-bottom: solid 1px #ea041f;
+}
+
+.productComment div:nth-child(4) {
+    max-width: 30%;
+    margin-top: 10px;
+    background-color: #ffd000;
+    text-align: center;
+    color: #001d3d;
+    border-radius: 30px;
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        background-color: rgba(255, 208, 0, 0.8);
+        /* 시작 색상 */
+    }
+
+    to {
+        background-color: rgba(255, 208, 0, 0.4);
+        /* 끝 색상 */
+    }
+}
+
+.productComment .productTitle {
+    font-size: 1.3em;
+}
+
+.addButton {
+    width: 100%;
+    margin-top: 2em;
+    background: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.addButton:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (min-width: 576px) {
+
+    .container,
+    .container-sm {
+        max-width: 630px !important;
+    }
 }
