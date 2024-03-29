@@ -16,7 +16,7 @@
       "price": 29900,
       "choice": true,
       "new": true,
-      "size": ["S", "M", "L"]
+      "size": ["M", "L"]
     },
     {
       "id": 2,

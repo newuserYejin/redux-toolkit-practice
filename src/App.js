@@ -27,11 +27,11 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar auth={auth} />
 
       <Routes>
         <Route path='/' element={<ProductAll />} />
-        <Route path='/login' element={<Login setAuth={setAuth} />} />
+        <Route path='/login' element={<Login setAuth={setAuth} auth={auth} />} />
         <Route path='/product/:id' element={<PrivateRoute auth={auth} />} />
       </Routes>
 

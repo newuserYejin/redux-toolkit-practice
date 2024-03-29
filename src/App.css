@@ -72,6 +72,8 @@
 
 .productCard {
     margin-bottom: 1em;
+    font-weight: 600;
+    font-size: 1em;
 }
 
 .productCard img {
@@ -90,7 +92,7 @@
 }
 
 .loginForm {
-    width: 40%;
+    width: 50%;
     position: relative;
 }
 
@@ -131,6 +133,22 @@
     animation: blink 0.5s infinite alternate;
 }
 
+.productCardChoice {
+    display: inline-block;
+    font-weight: 400;
+    border-bottom: solid 1px #ea041f;
+}
+
+.productCardNew {
+    max-width: 30%;
+    margin-top: 10px;
+    background-color: #ffd000;
+    text-align: center;
+    color: #001d3d;
+    border-radius: 30px;
+    animation: blink 0.5s infinite alternate;
+}
+
 @keyframes blink {
     from {
         background-color: rgba(255, 208, 0, 0.8);
@@ -161,10 +179,106 @@
     color: white;
 }
 
-@media (min-width: 576px) {
+.logoutMent {
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
 
-    .container,
-    .container-sm {
-        max-width: 630px !important;
+.logout {
+    width: 80%;
+    text-align: center;
+}
+
+.row {
+    justify-content: center;
+}
+
+/*사이드 메뉴*/
+.sideMenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 150px;
+    transform: translateX(-110%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f6aa1c;
+    transition: transform 0.7s;
+}
+
+.sideMenu.show {
+    transform: translateX(0);
+}
+
+.sideMenu>div {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hideIcon {
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.sideMenus {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.sideMenuButton {
+    display: none;
+}
+
+@media (max-width:990px) {
+    .menuArea {
+        position: static;
+    }
+
+    .menuList {
+        display: none;
+    }
+
+    .inputBox {
+        position: static;
+        margin: 20px 0;
+        width: 40%;
+        min-width: 200px;
+        right: 0;
+    }
+
+    .sideMenuButton {
+        display: block;
+    }
+
+    .loginButton {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width:600px) {
+    .row img {
+        width: 70%;
+    }
+
+    .productCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .productCardNew {
+        width: 40%;
     }
 }

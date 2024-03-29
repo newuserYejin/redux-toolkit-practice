@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { useParams } from "react-router-dom"
 
 const ProductDetail = () => {
+    let [sizeList, setSizeList] = useState([])
     let { id } = useParams()
     const [product, setProduct] = useState(null)
 
