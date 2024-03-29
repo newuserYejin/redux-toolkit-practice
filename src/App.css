@@ -237,7 +237,7 @@
     font-size: 1.1em;
 }
 
-.sideMenuButton {
+.loginButton .sideMenuButton {
     display: none;
 }
 
@@ -258,7 +258,7 @@
         right: 0;
     }
 
-    .sideMenuButton {
+    .loginButton .sideMenuButton {
         display: block;
     }
 
