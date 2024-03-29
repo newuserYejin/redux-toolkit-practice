@@ -91,6 +91,10 @@
     align-items: center;
 }
 
+.BoxContainer img {
+    width: 100%;
+}
+
 .loginForm {
     width: 50%;
     position: relative;
@@ -268,7 +272,7 @@
 }
 
 @media (max-width:600px) {
-    .row img {
+    .productCard img {
         width: 70%;
     }
 
@@ -280,5 +284,19 @@
 
     .productCardNew {
         width: 40%;
+    }
+
+    .BoxContainer .col {
+        flex: none;
+        width: 70%;
+    }
+
+    .BoxContainer .col:first-child {
+        text-align: center;
+        padding: 0;
+    }
+
+    .BoxContainer img {
+        width: auto;
     }
 }
