@@ -3,18 +3,18 @@ import { useEffect } from 'react'
 import ProductCard from '../component/ProductCard'
 import { Col, Container, Row, col } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
+import { productAction } from '../redux/actions/productAction'
+import { useDispatch, useSelector } from 'react-redux'
 
 const ProductAll = () => {
-    const [productList, setProductList] = useState([])
+    const productList = useSelector(state => state.productList)
     const [query, setQuery] = useSearchParams()
 
-    const getProducts = async () => {
-        let searchQuery = query.get('q') || "" // url에서 q의 값 가져오기
+    const dispatch = useDispatch()
 
-        let url = `https://my-json-server.typicode.com/newuserYejin/h-m-react-router-practice/products?q=${searchQuery}`
-        let response = await fetch(url)
-        let data = await response.json()
-        setProductList(data)
+    const getProducts = () => {
+        let searchQuery = query.get('q') || "" // url에서 q의 값 가져오기
+        dispatch(productAction.getProducts(searchQuery))
     }
 
     useEffect(() => {
