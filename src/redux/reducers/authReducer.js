@@ -9,7 +9,7 @@ function authReducer(state = initialState, action) {
     switch (type) {
         case "LOGIN_SUCCESS":
             console.log("login success!!!!!!!!!!!!")
-            return { ...state, id: payload.id, password: payload.password, auth: true }
+            return { ...state, id: payload.id, password: payload.password, auth: !state.auth }
         default:
             return { ...state }
     }
