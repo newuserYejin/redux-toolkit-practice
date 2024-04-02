@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { authAction } from '../redux/actions/authAction';
 
-const Login = ({ setAuth, auth }) => {
+
+const Login = () => {
+    const [id, setId] = useState('')
+    const [password, setPassword] = useState('')
+    const authState = useSelector(state => state.auth.auth)
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const loginUser = (event) => {
         event.preventDefault()
-        if (auth === false) {
-            setAuth(true)
+        if (authState === false) {
+            console.log("auth(false):", authState)
+            dispatch(authAction.login(id, password))
             console.log("login!!!!!!!!")
             navigate('/')
-        } else if (auth === true) {
-            setAuth(false)
+        } else if (authState === true) {
+            console.log("auth(true):", authState)
+            dispatch(authAction.login(id, password))
             console.log("logout!!!!!!!!")
             navigate('/login')
         }
@@ -21,10 +30,10 @@ const Login = ({ setAuth, auth }) => {
 
     return (
         <Container className='BoxContainer'>
-            {auth === false ? (<Form className='loginForm' onSubmit={(event) => loginUser(event)}>
+            {authState === false ? (<Form className='loginForm' onSubmit={(event) => loginUser(event)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Enter email" onChange={(event) => setId(event.target.value)} />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -32,7 +41,7 @@ const Login = ({ setAuth, auth }) => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                 </Form.Group>
                 <Button variant="danger" type="submit">
                     Login

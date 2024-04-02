@@ -7,6 +7,7 @@ import ProductDetail from './page/ProductDetail'
 import Navbar from './component/Navbar';
 import { useEffect, useState } from 'react';
 import PrivateRoute from './Route/PrivateRoute';
+import { useSelector } from 'react-redux';
 
 // 1. 전체 상품 페이지, 로그인, 상품상세 페이지
 // 2. 전체 상품 페이지는 전체 상품을 볼 수 있다.
@@ -19,7 +20,7 @@ import PrivateRoute from './Route/PrivateRoute';
 // 9. 상품을 검색 할 수 있다.
 
 function App() {
-  const [auth, setAuth] = useState(false)
+  const auth = useSelector(state => state.auth.auth)
 
   useEffect(() => {
     console.log("auth: ", auth)
@@ -27,12 +28,12 @@ function App() {
 
   return (
     <div>
-      <Navbar auth={auth} />
+      <Navbar />
 
       <Routes>
         <Route path='/' element={<ProductAll />} />
-        <Route path='/login' element={<Login setAuth={setAuth} auth={auth} />} />
-        <Route path='/product/:id' element={<PrivateRoute auth={auth} />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/product/:id' element={<PrivateRoute />} />
       </Routes>
 
     </div>

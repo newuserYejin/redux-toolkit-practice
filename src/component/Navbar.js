@@ -3,10 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch, faBars, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-const Navbar = ({ auth }) => {
+const Navbar = () => {
     const menuList = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M Home', 'Sale', '지속가능성']
     const [sideVisible, setSideVisible] = useState(false)
+
+    const authState = useSelector(state => state.auth.auth)
 
     const navigate = useNavigate()
     const LoginPageMove = async () => {
@@ -39,7 +42,7 @@ const Navbar = ({ auth }) => {
                     </button>
                     <button onClick={LoginPageMove}>
                         <FontAwesomeIcon icon={faUser} />
-                        <div>{auth === true ? "로그아웃" : "로그인"}</div>
+                        <div>{authState === true ? "로그아웃" : "로그인"}</div>
                     </button>
                 </div>
             </div>
