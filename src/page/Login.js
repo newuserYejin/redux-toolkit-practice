@@ -16,13 +16,11 @@ const Login = () => {
     const loginUser = (event) => {
         event.preventDefault()
         if (authState === false) {
-            console.log("auth(false):", authState)
             dispatch(authAction.login(id, password))
             console.log("login!!!!!!!!")
             navigate('/')
         } else if (authState === true) {
-            console.log("auth(true):", authState)
-            dispatch(authAction.login(id, password))
+            dispatch(authAction.logout(id, password))
             console.log("logout!!!!!!!!")
             navigate('/login')
         }
