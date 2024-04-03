@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import ProductCard from '../component/ProductCard'
-import { Col, Container, Row, col } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
 import { productAction } from '../redux/actions/productAction'
 import { useDispatch, useSelector } from 'react-redux'
